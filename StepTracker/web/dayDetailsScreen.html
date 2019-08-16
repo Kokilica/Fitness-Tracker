@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Day Details Screen</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Css/css.css">
+    </head>
+    <body onload="infoDay()">
+        <div id="main">
+            <div id="boxDay">
+                <p id="boxDayText">
+                    <b id="day"></b>
+                </p>
+
+                <p id="date">
+
+                </p>
+
+                <a href="homeScreen.html">
+                    <img class="back" src="icons/baseline-chevron_left-24px.svg"/>
+                </a>
+            </div>
+
+            <button class="dayNumber" onclick="showDate1()" id="smallBox1">
+                10 </br> MON
+            </button>
+
+            <button class="dayNumber" onclick="showDate2()" id="smallBox2">
+                11 </br> TUE
+            </button>
+
+            <button class="dayNumber" onclick="showDate3()" id="smallBox3">
+                12 </br> WED
+            </button>
+
+            <button class="dayNumber" onclick="showDate4()" id="smallBox4">
+                13 </br> THU
+            </button>
+
+            <button class="dayNumber" onclick="showDate5()" id="smallBox5">
+                14 </br> FRI
+            </button>
+
+
+            <div class="bigBox">
+
+                <div id="circle">
+
+                    <div id="iconDay">
+                        <img id="iconPosition" src="icons/baseline-directions_run-24px (2).svg"/>
+                    </div>
+                    <p id="textDay">
+                        Steps
+                    </p>
+                    <p class="numberSteps">
+                        <b id="stepsb"></b>
+                    </p>
+                    <p id="textDay">
+                        Very Good
+                    </p>
+                    <p id="bigText">
+                        <b>Keep going!</b>
+                    </p>
+                </div>
+                <p id="kmCalHours1">
+                    km
+                </p>
+                <p id="kmCalHours2">
+                    cal
+                </p>
+                <p id="kmCalHours3">
+                    hours
+                </p>
+                <p class="num1">
+                    <b id="km"></b>
+                </p>
+                <p class="num2">
+                    <b id="cal"></b>
+                </p>
+                <p class="num3">
+                    <b id="hours"></b>
+                </p>
+            </div>
+        </div>
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function infoDay() {
+                var time = '[{"timestamp":1560151980000,"steps":981},{"timestamp":1560161100000,"steps":103},{"timestamp":1560179640000,"steps":1911},{"timestamp":1560243749916,"steps":1404},{"timestamp":1560255089916,"steps":820}]';
+                var obj = JSON.parse(time);
+
+                //step one day
+                var id = localStorage.getItem("id");
+                document.getElementById("stepsb").innerHTML = obj[id].steps;
+
+                //km one day
+                var fullKm = (obj[id].steps * 0.762 / 1000);
+                var fixKm = fullKm.toFixed(2);
+                document.getElementById("km").innerHTML = fixKm;
+
+                //calories one day
+                var fullCalories = (obj[id].steps * 0.05);
+                var fixCalories = fullCalories.toFixed(2);
+                document.getElementById("cal").innerHTML = fixCalories;
+
+                //time one day
+                var timeSeconds = (obj[id].steps * 0.5) / 60;
+                document.getElementById("hours").innerHTML = secToTime(timeSeconds);
+            });
+        </script>
+
+        <script src="js/js.js"></script>
+    </body>
+</html>

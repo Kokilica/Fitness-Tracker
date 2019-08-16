@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Home Screen</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="Css/css.css">
+    </head>
+    <body>
+        <div id="main">
+            <div id="box">
+                <p id="welcome">
+                    <b>Welcome!</b></p>
+                <p id="text">Overview of your activity</p>
+            </div>       
+
+            <button class="dayNumber" onclick="link(0);" id="smallBox1">
+                10 </br> MON
+            </button>
+
+            <button class="dayNumber" onclick="link(1);" id="smallBox2">
+                11 </br> TUE
+            </button>
+
+            <button class="dayNumber" onclick="link(2);" id="smallBox3">
+                12 </br> WED
+            </button>
+
+            <button class="dayNumber" onclick="link(3);" id="smallBox4">
+                13 </br> THU
+            </button>
+
+            <button class="dayNumber" onclick="link(4);" id="smallBox5">
+                14 </br> FRI
+            </button>
+
+            <div id="activity">
+                <div id="icon">
+                    <img id="iconPosition" src="icons/baseline-timer-24px.svg"/>
+                </div>
+                <p id="activityText">
+                    Activity 
+                </p>
+                <p id="activityText1">
+                    Average
+                </p>
+                <div class="activityTime">
+                    <b id="time"></b>
+                </div>                
+            </div>
+
+            <div id="steps">
+                <div id="icon">
+                    <img id="iconPosition" src="icons/baseline-directions_run-24px (2).svg"/>
+                </div>
+                <p id="activityText">
+                    Steps
+                </p>
+                <p id="activityText1">
+                    Total
+                </p>
+                <div class="stepsTotal">
+                    <b id="step"></b>
+                </div>
+            </div>
+
+            <div class="calories">
+                <div id="icon">
+                    <img id="iconPosition" src="icons/baseline-whatshot-24px.svg"/>
+                </div>
+                <p id="activityText">
+                    Calories
+                </p>
+                <p id="activityText1">
+                    Total Burned
+                </p>
+                <p class="caloriesTotal">
+                    <b id="cal"></b>
+                    <script>
+
+                    </script>
+                </p>
+            </div>
+        </div>
+        <script src="js/js.js"></script>
+    </body>
+</html>
